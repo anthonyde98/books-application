@@ -1,0 +1,37 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">Listado de libros</span>
+            <button class="btn btn-lg btn-dark float-end" [routerLink]="['/create-empleados']" routerLinkActive="router-link-active" > Nuevo libro</button>
+            <div>
+                <p *ngIf="false" class="mt-4">No hay libros para mostrar.</p>
+            </div>
+            <table *ngIf= "true" class="table table-striped mt-5">
+                <thead class="bg-dark text-light">
+                    <tr>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Autor</th>
+                        <th scope="col">Editorial</th>
+                        <th scope="col">Fecha de publicación</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Anthony</td>
+                        <td>Delanoy</td>
+                        <td>sad</td>
+                        <td>asd</td>
+                        <td>asd</td>
+                        <td>
+                            <p>detalle</p>
+                            <p>eliminar</p>
+                            <p>editar</p>
+                        </td>
+                    </tr>                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

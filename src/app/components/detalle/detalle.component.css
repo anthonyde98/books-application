@@ -1,0 +1,11 @@
+table colgroup col:nth-child(1) {
+    color: #495057;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+    width: 175px;
+}
+
+.card{
+    border: 0.1px solid rgb(216, 216, 216);
+    box-shadow: 0 2px 8px 0 rgb(153 153 153 / 44%);
+}
