@@ -7,7 +7,7 @@ import { EliminarComponent } from './components/eliminar/eliminar.component';
 import { ListaComponent } from './components/lista/lista.component';
 
 const routes: Routes = [
-  {path: 'lista', component: ListaComponent},
+  {path: '', component: ListaComponent},
   {path: 'crear/:id', component: CrearComponent},
   {path: 'detalle/:id', component: DetalleComponent},
   {path: 'eliminar/:id', component: EliminarComponent}

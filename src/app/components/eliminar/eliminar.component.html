@@ -5,7 +5,7 @@
             <h5 class="card-title">Eliminar libro</h5>
             <p class="card-text">¿Esta seguro de que quiere eliminar este libro?</p>
             <button (click)="eliminarLibro()" class="btn btn-danger font-weight-bold me-3">Eliminar</button>
-            <a href="/lista" class="btn btn-primary font-weight-bold border-dark bg-dark">Volver</a>
+            <a [routerLink]="['']" class="btn btn-primary font-weight-bold border-dark bg-dark">Volver</a>
         </div>
     </div>
 </div>

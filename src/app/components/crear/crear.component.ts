@@ -23,9 +23,9 @@ export class CrearComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.rutaActiva.snapshot.paramMap.get('id') != ''){
-      this.setFormEditar();
       this.libroId = this.rutaActiva.snapshot.paramMap.get('id');
       this.text = "Editar";
+      this.setFormAgregar()
       this.setInputs()
     }
     else{
@@ -72,11 +72,13 @@ export class CrearComponent implements OnInit {
 
   setInputs(){
     this.libroService.getBook(Number(this.libroId)).subscribe(datos => {
-      this.agregarLibro.controls['titulo'].setValue(datos.body.titulo);
-      this.agregarLibro.controls['autor'].setValue(datos.body.autor);
-      this.agregarLibro.controls['editorial'].setValue(datos.body.editorial);
-      this.agregarLibro.controls['fechaPub'].setValue(datos.body.fechaPublicacion);
-      this.agregarLibro.controls['precio'].setValue(Number(datos.body.precio))
+      this.agregarLibro.patchValue({
+        titulo: datos.body.titulo,
+        autor: datos.body.autor,
+        editorial: datos.body.editorial,
+        fechaPub: datos.body.fechaPublicacion,
+        precio: datos.body.precio
+      })
 
       this.libro = datos.body;
     })
@@ -88,16 +90,6 @@ export class CrearComponent implements OnInit {
       autor: ['', Validators.required],
       editorial: ['', Validators.required],
       fechaPub: ['', Validators.required],
-      precio: ['', Validators.required]
-    })
-  }
-
-  setFormEditar(){
-    this.agregarLibro = this.fb.group({
-      titulo: ['', Validators.required],
-      autor: ['', Validators.required],
-      editorial: ['', Validators.required],
-      fechaPub: "",
       precio: ['', Validators.required]
     })
   }
